@@ -68,17 +68,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8"
 
 [[package]]
-name = "bestls"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "clap",
- "strum",
- "strum_macros",
- "tabled",
-]
-
-[[package]]
 name = "bumpalo"
 version = "3.19.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -240,6 +229,17 @@ name = "log"
 version = "0.4.29"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5e5032e24019045c762d3c0f28f5b6b8bbf38563a65908389bf7978758920897"
+
+[[package]]
+name = "lsx"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "clap",
+ "strum",
+ "strum_macros",
+ "tabled",
+]
 
 [[package]]
 name = "num-traits"

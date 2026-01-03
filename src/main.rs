@@ -8,6 +8,9 @@ use tabled::{Table, Tabled, settings::Style};
 #[derive(Parser)]
 struct Args {
     path: Option<PathBuf>,
+
+    #[arg(short, long)]
+    all: bool,
 }
 
 #[derive(Display)]
@@ -38,7 +41,10 @@ fn main() {
 
     if let Ok(exists) = fs::exists(&path) {
         if exists {
-            let files = get_files(path);
+            let mut files = get_files(path);
+            if !args.all {
+                files.retain(|file| !file.name.starts_with("."));
+            }
             let mut table = Table::new(files);
             table.with(Style::rounded());
             println!("{}", table);
@@ -124,4 +130,3 @@ fn get_human_readable_size(bytes: u64) -> String {
         format!("{} GB", bytes / GB)
     }
 }
-
