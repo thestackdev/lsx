@@ -11,6 +11,18 @@ struct Args {
 
     #[arg(short, long)]
     all: bool,
+
+    #[arg(short = 'S', long)]
+    size: bool,
+
+    #[arg(short = 't', long)]
+    time: bool,
+
+    #[arg(short, long)]
+    reverse: bool,
+
+    #[arg(short = 'n', long)]
+    name: bool,
 }
 
 #[derive(Display)]
@@ -45,6 +57,7 @@ fn main() {
             if !args.all {
                 files.retain(|file| !file.name.starts_with("."));
             }
+
             let mut table = Table::new(files);
             table.with(Style::rounded());
             println!("{}", table);

@@ -55,6 +55,9 @@ lsx
 # List a specific directory
 lsx /path/to/directory
 
+# Show hidden files
+lsx --all
+
 # Show help
 lsx --help
 ```
